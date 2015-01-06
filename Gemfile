@@ -7,3 +7,7 @@ gem 'rails-api'
 
 gem "mongo_mapper"
 gem "bson_ext"
+
+group :development, :test do
+  gem "rspec-rails"
+end
