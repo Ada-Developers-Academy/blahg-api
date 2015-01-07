@@ -65,6 +65,9 @@ Usage
   ]
 }
 ```
+
+------
+
 ##### `POST /posts`
 <small><b>Creates a Post</b></small>
 Accepted values:
