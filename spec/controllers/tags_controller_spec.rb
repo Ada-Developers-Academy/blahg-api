@@ -36,5 +36,14 @@ RSpec.describe TagsController, :type => :controller do
     it 'destroys a tag' do
       expect {make_request}.to change(Tag, :count).by(-1)
     end
+
+    context 'when given a post id' do
+      let(:p) { Post.create(title: "Blah") }
+      let(:make_request) { delete :destroy, id: tag.id, post_id: p.id }
+
+      it 'only removes the tag from the post' do
+        expect { make_request }.to_not change(Tag, :count)
+      end
+    end
   end
 end
