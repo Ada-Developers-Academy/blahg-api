@@ -56,7 +56,7 @@ Usage
 Accepted values:
 
 |Key|Type|
-|-|-|
+|:--|:--:|
 |post[title]|String|
 |post[content]|String|
 |post[date]|Time|
