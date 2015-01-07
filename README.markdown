@@ -36,7 +36,8 @@ heroku addons:add mongolab:sandbox
 Usage
 -----
 
-### `GET /posts` <small><b>Returns an array of Posts</b></small>
+##### `GET /posts`
+<small><b>Returns an array of Posts</b></small>
 
 ```json
 [
@@ -50,7 +51,8 @@ Usage
 ]
 ```
 ---------
-### `POST /posts` <small><b>Creates a Post</b></small>
+##### `POST /posts`
+<small><b>Creates a Post</b></small>
 Accepted values:
 
 |Key|Type|
@@ -61,7 +63,8 @@ Accepted values:
 
 -------
 
-### `DELETE /posts/:id` <small><b>Deletes a Post</b></small>
+##### `DELETE /posts/:id`
+<small><b>Deletes a Post</b></small>
 --------
 ##### `POST /posts/:post_id/tags`
 
@@ -72,9 +75,11 @@ Accepted values:
 |tag[name]|String|
 
 -------
-### `DELETE /posts/:post_id/tags/:id`<small><b>Removes a Tag from a Post</b></small>
+##### `DELETE /posts/:post_id/tags/:id`
+<small><b>Removes a Tag from a Post</b></small>
 -------
-### `GET /tags`<small><b>Returns all Tags</b></small>
+##### `GET /tags`
+<small><b>Returns all Tags</b></small>
 
 ```json
 [
@@ -85,6 +90,8 @@ Accepted values:
 ]
 ```
 ------
-### `POST /tags`<small><b>Creates a Tag</b></small>
+##### `POST /tags`
+<small><b>Creates a Tag</b></small>
 ------
-### `DELETE /tags/:id`<small><b>Deletes a Tag</b></small>
+##### `DELETE /tags/:id`
+<small><b>Deletes a Tag</b></small>
