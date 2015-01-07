@@ -1,6 +1,6 @@
 defaults: &defaults
-  host: 127.0.0.1
-  port: 27017
+  uri: ENV["MONGOLAB_URI"]
+
   options:
     w: 1
     pool_size: 1
@@ -20,5 +20,3 @@ test:
 production:
   <<: *defaults
   database: blahg_api
-  username: <%= ENV['MONGO_USERNAME'] %>
-  password: <%= ENV['MONGO_PASSWORD'] %>
