@@ -63,7 +63,7 @@ Accepted values:
 
 ### `DELETE /posts/:id` <small><b>Deletes a Post</b></small>
 --------
-### `POST /posts/:post_id/tags`<small><b>Find or creates a tag while adding it to a Post</b></small>
+##### `POST /posts/:post_id/tags`<small><b>Find or creates a tag while adding it to a Post</b></small>
 
 |Key|Type|
 |:--|:---:|
