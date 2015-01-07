@@ -36,23 +36,51 @@ heroku addons:add mongolab:sandbox
 Usage
 -----
 
-### `GET /posts`
-Returns an array of Posts
+### `GET /posts` <small><b>Returns an array of Posts</b></small>
+
 ```json
 [
   {
-    "id":"54ad706827814565ee000001",
-    "tag_ids":[],
-    "title":"blah",
-    "date":
+    "content": "Lorem Ipsum",
+    "date": "2015-01-07T00:00:00.000Z",
+    "id": "54ad8bba6f69fd0002000001",
+    "tag_ids": [],
+    "title": "Test"
   }
 ]
 ```
-### `POST /posts`
-### `DELETE /posts/:id`
-### `POST /posts/:post_id/tags`
-### `DELETE /posts/:post_id/tags/:id`
-### `GET /tags`
-### `GET /tags/:id`
-### `POST /tags`
-### `DELETE /tags/:id`
+---------
+### `POST /posts` <small><b>Creates a Post</b></small>
+Accepted values:
+
+|Key|Type|
+|-|-|
+|post[title]|String|
+|post[content]|String|
+|post[date]|Time|
+
+-------
+
+### `DELETE /posts/:id` <small><b>Deletes a Post</b></small>
+--------
+### `POST /posts/:post_id/tags`<small><b>Find or creates a tag while adding it to a Post</b></small>
+|Key|Type|
+|-|-|
+|tag[name]|String|
+-------
+### `DELETE /posts/:post_id/tags/:id`<small><b>Removes a Tag from a Post</b></small>
+-------
+### `GET /tags`<small><b>Returns all Tags</b></small>
+
+```json
+[
+  {
+    "id": "54ad8d8d6f69fd0002000003",
+    "name": "Yum"
+  }
+]
+```
+------
+### `POST /tags`<small><b>Creates a Tag</b></small>
+------
+### `DELETE /tags/:id`<small><b>Deletes a Tag</b></small>
