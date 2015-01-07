@@ -1,6 +1,4 @@
 defaults: &defaults
-  uri: <%= ENV["MONGOLAB_URI"] %>
-
   options:
     w: 1
     pool_size: 1
@@ -8,15 +6,20 @@ defaults: &defaults
     ssl: false
 
 development:
+  host: 127.0.0.1
+  port: 27017
   <<: *defaults
   database: blahg_api_development
 
 test:
   <<: *defaults
+  host: 127.0.0.1
+  port: 27017
   database: blahg_api_test
   w: 0
 
 # set these environment variables on your prod server
 production:
   <<: *defaults
+  uri: <%= ENV["MONGOLAB_URI"] %>
   database: blahg_api
