@@ -66,7 +66,7 @@ Accepted values:
 ### `POST /posts/:post_id/tags`<small><b>Find or creates a tag while adding it to a Post</b></small>
 
 |Key|Type|
-|-|-|
+|:--|:---:|
 |tag[name]|String|
 
 -------
