@@ -53,60 +53,71 @@
       <h2 id="deploy">Deploy</h2>
       <pre class="editor-colors lang-bash"><div class="line"><span class="source shell"><span>heroku&nbsp;create&nbsp;</span><span class="keyword operator redirect shell"><span>&lt;</span></span><span>name-of-app</span><span class="keyword operator redirect shell"><span>&gt;</span></span></span></div><div class="line"><span class="source shell"><span>heroku&nbsp;addons:add&nbsp;mongolab:sandbox</span></span></div></pre>
       <h2 id="usage">Usage</h2>
-      <h3 id="-get-posts-small-b-returns-an-array-of-posts-b-small-"><code>GET /posts</code> <small><b>Returns an array of Posts</b></small></h3>
+      <h5 id="-get-posts-"><code>GET /posts</code></h5>
+      <p><small><b>Returns an array of Posts</b></small></p>
       <pre class="editor-colors lang-json"><div class="line"><span class="source json"><span class="meta structure array json"><span class="punctuation definition array begin json"><span>[</span></span></span></span></div><div class="line"><span class="source json"><span class="meta structure array json"><span>&nbsp;&nbsp;</span><span class="meta structure dictionary json"><span class="punctuation definition dictionary begin json"><span>{</span></span></span></span></span></div><div class="line"><span class="source json"><span class="meta structure array json"><span class="meta structure dictionary json"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="string quoted double json"><span class="punctuation definition string begin json"><span>"</span></span><span>content</span><span class="punctuation definition string end json"><span>"</span></span></span><span class="meta structure dictionary value json"><span class="punctuation separator dictionary key-value json"><span>:</span></span><span>&nbsp;</span><span class="string quoted double json"><span class="punctuation definition string begin json"><span>"</span></span><span>Lorem&nbsp;Ipsum</span><span class="punctuation definition string end json"><span>"</span></span></span><span class="punctuation separator dictionary pair json"><span>,</span></span></span></span></span></span></div><div class="line"><span class="source json"><span class="meta structure array json"><span class="meta structure dictionary json"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="string quoted double json"><span class="punctuation definition string begin json"><span>"</span></span><span>date</span><span class="punctuation definition string end json"><span>"</span></span></span><span class="meta structure dictionary value json"><span class="punctuation separator dictionary key-value json"><span>:</span></span><span>&nbsp;</span><span class="string quoted double json"><span class="punctuation definition string begin json"><span>"</span></span><span>2015-01-07T00:00:00.000Z</span><span class="punctuation definition string end json"><span>"</span></span></span><span class="punctuation separator dictionary pair json"><span>,</span></span></span></span></span></span></div><div class="line"><span class="source json"><span class="meta structure array json"><span class="meta structure dictionary json"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="string quoted double json"><span class="punctuation definition string begin json"><span>"</span></span><span>id</span><span class="punctuation definition string end json"><span>"</span></span></span><span class="meta structure dictionary value json"><span class="punctuation separator dictionary key-value json"><span>:</span></span><span>&nbsp;</span><span class="string quoted double json"><span class="punctuation definition string begin json"><span>"</span></span><span>54ad8bba6f69fd0002000001</span><span class="punctuation definition string end json"><span>"</span></span></span><span class="punctuation separator dictionary pair json"><span>,</span></span></span></span></span></span></div><div class="line"><span class="source json"><span class="meta structure array json"><span class="meta structure dictionary json"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="string quoted double json"><span class="punctuation definition string begin json"><span>"</span></span><span>tag_ids</span><span class="punctuation definition string end json"><span>"</span></span></span><span class="meta structure dictionary value json"><span class="punctuation separator dictionary key-value json"><span>:</span></span><span>&nbsp;</span><span class="meta structure array json"><span class="punctuation definition array begin json"><span>[</span></span><span class="punctuation definition array end json"><span>]</span></span></span><span class="punctuation separator dictionary pair json"><span>,</span></span></span></span></span></span></div><div class="line"><span class="source json"><span class="meta structure array json"><span class="meta structure dictionary json"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="string quoted double json"><span class="punctuation definition string begin json"><span>"</span></span><span>title</span><span class="punctuation definition string end json"><span>"</span></span></span><span class="meta structure dictionary value json"><span class="punctuation separator dictionary key-value json"><span>:</span></span><span>&nbsp;</span><span class="string quoted double json"><span class="punctuation definition string begin json"><span>"</span></span><span>Test</span><span class="punctuation definition string end json"><span>"</span></span></span></span></span></span></span></div><div class="line"><span class="source json"><span class="meta structure array json"><span class="meta structure dictionary json"><span class="meta structure dictionary value json"><span>&nbsp;&nbsp;</span></span><span class="punctuation definition dictionary end json"><span>}</span></span></span></span></span></div><div class="line"><span class="source json"><span class="meta structure array json"><span class="punctuation definition array end json"><span>]</span></span></span></span></div></pre>
       <hr>
-      <h3 id="-post-posts-small-b-creates-a-post-b-small-"><code>POST /posts</code> <small><b>Creates a Post</b></small></h3>
-      <p>Accepted values:</p>
-      <table>
-        <thead>
-          <tr>
-            <th>Key</th>
-            <th>Type</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>post[title]</td>
-            <td>String</td>
-          </tr>
-          <tr>
-            <td>post[content]</td>
-            <td>String</td>
-          </tr>
-          <tr>
-            <td>post[date]</td>
-            <td>Time</td>
-          </tr>
-        </tbody>
-      </table>
-      <hr>
-      <h3 id="-delete-posts-id-small-b-deletes-a-post-b-small-"><code>DELETE /posts/:id</code> <small><b>Deletes a Post</b></small></h3>
-      <hr>
-      <h3 id="-post-posts-post_id-tags-small-b-find-or-creates-a-tag-while-adding-it-to-a-post-b-small-"><code>POST /posts/:post_id/tags</code><small><b>Find or creates a tag while adding it to a Post</b></small></h3>
-      <table>
-        <thead>
-          <tr>
-            <th>Key</th>
-            <th>Type</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>tag[name]</td>
-            <td>String</td>
-          </tr>
-        </tbody>
-      </table>
-      <hr>
-      <h3 id="-delete-posts-post_id-tags-id-small-b-removes-a-tag-from-a-post-b-small-"><code>DELETE /posts/:post_id/tags/:id</code><small><b>Removes a Tag from a Post</b></small></h3>
-      <hr>
-      <h3 id="-get-tags-small-b-returns-all-tags-b-small-"><code>GET /tags</code><small><b>Returns all Tags</b></small></h3>
-      <pre class="editor-colors lang-json"><div class="line"><span class="source json"><span class="meta structure array json"><span class="punctuation definition array begin json"><span>[</span></span></span></span></div><div class="line"><span class="source json"><span class="meta structure array json"><span>&nbsp;&nbsp;</span><span class="meta structure dictionary json"><span class="punctuation definition dictionary begin json"><span>{</span></span></span></span></span></div><div class="line"><span class="source json"><span class="meta structure array json"><span class="meta structure dictionary json"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="string quoted double json"><span class="punctuation definition string begin json"><span>"</span></span><span>id</span><span class="punctuation definition string end json"><span>"</span></span></span><span class="meta structure dictionary value json"><span class="punctuation separator dictionary key-value json"><span>:</span></span><span>&nbsp;</span><span class="string quoted double json"><span class="punctuation definition string begin json"><span>"</span></span><span>54ad8d8d6f69fd0002000003</span><span class="punctuation definition string end json"><span>"</span></span></span><span class="punctuation separator dictionary pair json"><span>,</span></span></span></span></span></span></div><div class="line"><span class="source json"><span class="meta structure array json"><span class="meta structure dictionary json"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="string quoted double json"><span class="punctuation definition string begin json"><span>"</span></span><span>name</span><span class="punctuation definition string end json"><span>"</span></span></span><span class="meta structure dictionary value json"><span class="punctuation separator dictionary key-value json"><span>:</span></span><span>&nbsp;</span><span class="string quoted double json"><span class="punctuation definition string begin json"><span>"</span></span><span>Yum</span><span class="punctuation definition string end json"><span>"</span></span></span></span></span></span></span></div><div class="line"><span class="source json"><span class="meta structure array json"><span class="meta structure dictionary json"><span class="meta structure dictionary value json"><span>&nbsp;&nbsp;</span></span><span class="punctuation definition dictionary end json"><span>}</span></span></span></span></span></div><div class="line"><span class="source json"><span class="meta structure array json"><span class="punctuation definition array end json"><span>]</span></span></span></span></div></pre>
-      <hr>
-      <h3 id="-post-tags-small-b-creates-a-tag-b-small-"><code>POST /tags</code><small><b>Creates a Tag</b></small></h3>
-      <hr>
-      <h3 id="-delete-tags-id-small-b-deletes-a-tag-b-small-"><code>DELETE /tags/:id</code><small><b>Deletes a Tag</b></small></h3>
-    </div>
+      <h5 id="-get-posts-id-"><code>GET /posts/:id</code></h5>
+      <p><small><b>Returns a Post with associated Tags</b></small></p>
+      <pre class="editor-colors lang-json"><div class="line"><span class="source json"><span class="meta structure dictionary json"><span class="punctuation definition dictionary begin json"><span>{</span></span></span></span></div><div class="line"><span class="source json"><span class="meta structure dictionary json"><span>&nbsp;&nbsp;</span><span class="string quoted double json"><span class="punctuation definition string begin json"><span>"</span></span><span>id</span><span class="punctuation definition string end json"><span>"</span></span></span><span class="meta structure dictionary value json"><span class="punctuation separator dictionary key-value json"><span>:</span></span><span>&nbsp;</span><span class="string quoted double json"><span class="punctuation definition string begin json"><span>"</span></span><span>54ac150d7115a44ac9000001</span><span class="punctuation definition string end json"><span>"</span></span></span><span class="punctuation separator dictionary pair json"><span>,</span></span></span></span></span></div><div class="line"><span class="source json"><span class="meta structure dictionary json"><span>&nbsp;&nbsp;</span><span class="string quoted double json"><span class="punctuation definition string begin json"><span>"</span></span><span>tags</span><span class="punctuation definition string end json"><span>"</span></span></span><span class="meta structure dictionary value json"><span class="punctuation separator dictionary key-value json"><span>:</span></span><span>&nbsp;</span><span class="meta structure array json"><span class="punctuation definition array begin json"><span>[</span></span></span></span></span></span></div><div class="line"><span class="source json"><span class="meta structure dictionary json"><span class="meta structure dictionary value json"><span class="meta structure array json"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta structure dictionary json"><span class="punctuation definition dictionary begin json"><span>{</span></span></span></span></span></span></span></div><div class="line"><span class="source json"><span class="meta structure dictionary json"><span class="meta structure dictionary value json"><span class="meta structure array json"><span class="meta structure dictionary json"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="string quoted double json"><span class="punctuation definition string begin json"><span>"</span></span><span>id</span><span class="punctuation definition string end json"><span>"</span></span></span><span class="meta structure dictionary value json"><span class="punctuation separator dictionary key-value json"><span>:</span></span><span>&nbsp;</span><span class="string quoted double json"><span class="punctuation definition string begin json"><span>"</span></span><span>54ad73232781456703000001</span><span class="punctuation definition string end json"><span>"</span></span></span><span class="punctuation separator dictionary pair json"><span>,</span></span></span></span></span></span></span></span></div><div class="line"><span class="source json"><span class="meta structure dictionary json"><span class="meta structure dictionary value json"><span class="meta structure array json"><span class="meta structure dictionary json"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="string quoted double json"><span class="punctuation definition string begin json"><span>"</span></span><span>name</span><span class="punctuation definition string end json"><span>"</span></span></span><span class="meta structure dictionary value json"><span class="punctuation separator dictionary key-value json"><span>:</span></span><span>&nbsp;</span><span class="string quoted double json"><span class="punctuation definition string begin json"><span>"</span></span><span>yum</span><span class="punctuation definition string end json"><span>"</span></span></span></span></span></span></span></span></span></div><div class="line"><span class="source json"><span class="meta structure dictionary json"><span class="meta structure dictionary value json"><span class="meta structure array json"><span class="meta structure dictionary json"><span class="meta structure dictionary value json"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span class="punctuation definition dictionary end json"><span>}</span></span></span></span></span></span></span></div><div class="line"><span class="source json"><span class="meta structure dictionary json"><span class="meta structure dictionary value json"><span class="meta structure array json"><span>&nbsp;&nbsp;</span><span class="punctuation definition array end json"><span>]</span></span></span></span></span></span></div><div class="line"><span class="source json"><span class="meta structure dictionary json"><span class="punctuation definition dictionary end json"><span>}</span></span></span></span></div></pre>
+      <h5 id="-post-posts-"><code>POST /posts</code></h5>
+      <p><small><b>Creates a Post</b></small>
+        Accepted values:</p>
+        <table>
+          <thead>
+            <tr>
+              <th style="text-align:left">Key</th>
+              <th style="text-align:center">Type</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="text-align:left">post[title]</td>
+              <td style="text-align:center">String</td>
+            </tr>
+            <tr>
+              <td style="text-align:left">post[content]</td>
+              <td style="text-align:center">String</td>
+            </tr>
+            <tr>
+              <td style="text-align:left">post[date]</td>
+              <td style="text-align:center">Time</td>
+            </tr>
+          </tbody>
+        </table>
+        <hr>
+        <h5 id="-delete-posts-id-"><code>DELETE /posts/:id</code></h5>
+        <h2 id="-small-b-deletes-a-post-b-small-"><small><b>Deletes a Post</b></small></h2>
+        <h5 id="-post-posts-post_id-tags-"><code>POST /posts/:post_id/tags</code></h5>
+        <p><small><b>Find or creates a tag while adding it to a Post</b></small></p>
+        <table>
+          <thead>
+            <tr>
+              <th style="text-align:left">Key</th>
+              <th style="text-align:center">Type</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="text-align:left">tag[name]</td>
+              <td style="text-align:center">String</td>
+            </tr>
+          </tbody>
+        </table>
+        <hr>
+        <h5 id="-delete-posts-post_id-tags-id-"><code>DELETE /posts/:post_id/tags/:id</code></h5>
+        <h2 id="-small-b-removes-a-tag-from-a-post-b-small-"><small><b>Removes a Tag from a Post</b></small></h2>
+        <h5 id="-get-tags-"><code>GET /tags</code></h5>
+        <p><small><b>Returns all Tags</b></small></p>
+        <pre class="editor-colors lang-json"><div class="line"><span class="source json"><span class="meta structure array json"><span class="punctuation definition array begin json"><span>[</span></span></span></span></div><div class="line"><span class="source json"><span class="meta structure array json"><span>&nbsp;&nbsp;</span><span class="meta structure dictionary json"><span class="punctuation definition dictionary begin json"><span>{</span></span></span></span></span></div><div class="line"><span class="source json"><span class="meta structure array json"><span class="meta structure dictionary json"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="string quoted double json"><span class="punctuation definition string begin json"><span>"</span></span><span>id</span><span class="punctuation definition string end json"><span>"</span></span></span><span class="meta structure dictionary value json"><span class="punctuation separator dictionary key-value json"><span>:</span></span><span>&nbsp;</span><span class="string quoted double json"><span class="punctuation definition string begin json"><span>"</span></span><span>54ad8d8d6f69fd0002000003</span><span class="punctuation definition string end json"><span>"</span></span></span><span class="punctuation separator dictionary pair json"><span>,</span></span></span></span></span></span></div><div class="line"><span class="source json"><span class="meta structure array json"><span class="meta structure dictionary json"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="string quoted double json"><span class="punctuation definition string begin json"><span>"</span></span><span>name</span><span class="punctuation definition string end json"><span>"</span></span></span><span class="meta structure dictionary value json"><span class="punctuation separator dictionary key-value json"><span>:</span></span><span>&nbsp;</span><span class="string quoted double json"><span class="punctuation definition string begin json"><span>"</span></span><span>Yum</span><span class="punctuation definition string end json"><span>"</span></span></span></span></span></span></span></div><div class="line"><span class="source json"><span class="meta structure array json"><span class="meta structure dictionary json"><span class="meta structure dictionary value json"><span>&nbsp;&nbsp;</span></span><span class="punctuation definition dictionary end json"><span>}</span></span></span></span></span></div><div class="line"><span class="source json"><span class="meta structure array json"><span class="punctuation definition array end json"><span>]</span></span></span></span></div></pre>
+        <h5 id="-get-tags-id-"><code>GET /tags/:id</code></h5>
+        <p><small><b>Returns a Tag</b></small></p>
+        <pre class="editor-colors lang-json"><div class="line"><span class="source json"><span>&nbsp;</span></span></div><div class="line"><span class="source json"><span class="meta structure dictionary json"><span class="punctuation definition dictionary begin json"><span>{</span></span></span></span></div><div class="line"><span class="source json"><span class="meta structure dictionary json"><span>&nbsp;&nbsp;</span><span class="string quoted double json"><span class="punctuation definition string begin json"><span>"</span></span><span>id</span><span class="punctuation definition string end json"><span>"</span></span></span><span class="meta structure dictionary value json"><span class="punctuation separator dictionary key-value json"><span>:</span></span><span>&nbsp;</span><span class="string quoted double json"><span class="punctuation definition string begin json"><span>"</span></span><span>54ad8d8d6f69fd0002000003</span><span class="punctuation definition string end json"><span>"</span></span></span><span class="punctuation separator dictionary pair json"><span>,</span></span></span></span></span></div><div class="line"><span class="source json"><span class="meta structure dictionary json"><span>&nbsp;&nbsp;</span><span class="string quoted double json"><span class="punctuation definition string begin json"><span>"</span></span><span>name</span><span class="punctuation definition string end json"><span>"</span></span></span><span class="meta structure dictionary value json"><span class="punctuation separator dictionary key-value json"><span>:</span></span><span>&nbsp;</span><span class="string quoted double json"><span class="punctuation definition string begin json"><span>"</span></span><span>Yum</span><span class="punctuation definition string end json"><span>"</span></span></span></span></span></span></div><div class="line"><span class="source json"><span class="meta structure dictionary json"><span class="punctuation definition dictionary end json"><span>}</span></span></span></span></div></pre>
+        <hr>
+        <h5 id="-post-tags-"><code>POST /tags</code></h5>
+        <h2 id="-small-b-creates-a-tag-b-small-"><small><b>Creates a Tag</b></small></h2>
+        <h5 id="-delete-tags-id-"><code>DELETE /tags/:id</code></h5>
+        <p><small><b>Deletes a Tag</b></small></p>
+      </div>
   </body>
 </html>

@@ -6,6 +6,11 @@ class TagsController < ApplicationController
     render json: @tags.as_json
   end
 
+  def show
+    @tag = Tag.find(params[:id])
+    render json: @tag.as_json
+  end
+
   def create
     @tag = Tag.find_or_create(params.require(:tag).permit(:name))
     if @post

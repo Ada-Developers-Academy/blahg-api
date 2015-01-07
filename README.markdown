@@ -51,6 +51,20 @@ Usage
 ]
 ```
 ---------
+##### `GET /posts/:id`
+<small><b>Returns a Post with associated Tags</b></small>
+
+```json
+{
+  "id": "54ac150d7115a44ac9000001",
+  "tags": [
+    {
+      "id": "54ad73232781456703000001",
+      "name": "yum"
+    }
+  ]
+}
+```
 ##### `POST /posts`
 <small><b>Creates a Post</b></small>
 Accepted values:
@@ -89,9 +103,22 @@ Accepted values:
   }
 ]
 ```
+##### `GET /tags/:id`
+<small><b>Returns a Tag</b></small>
+
+```json
+
+{
+  "id": "54ad8d8d6f69fd0002000003",
+  "name": "Yum"
+}
+
+```
 ------
 ##### `POST /tags`
+
 <small><b>Creates a Tag</b></small>
+
 ------
 ##### `DELETE /tags/:id`
 <small><b>Deletes a Tag</b></small>
