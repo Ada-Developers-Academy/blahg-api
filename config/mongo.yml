@@ -1,5 +1,5 @@
 defaults: &defaults
-  uri: ENV["MONGOLAB_URI"]
+  uri: <%= ENV["MONGOLAB_URI"] %>
 
   options:
     w: 1
