@@ -6,8 +6,12 @@ class TagsController < ApplicationController
   end
 
   def create
-    @tag = Tag.new(params.require(:tag).permit!)
-    @tag.save
+    @post = Post.find(params[:post_id])
+    @tag = Tag.find_or_create(params.require(:tag).permit(:name))
+    if @post
+      @post.tags << @tag
+    end
+    render json: @tag.as_json
   end
 
   def destroy

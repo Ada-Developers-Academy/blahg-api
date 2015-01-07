@@ -1,3 +1,7 @@
 Rails.application.routes.draw do
-  resources :posts, :tags
+  resources :posts do
+    resources :tags
+  end
+  
+  resources :tags
 end

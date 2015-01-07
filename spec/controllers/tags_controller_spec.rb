@@ -18,6 +18,15 @@ RSpec.describe TagsController, :type => :controller do
       make_request
       expect(response.status).to eq 200
     end
+
+    context 'when given a post_id' do
+      let!(:p) { Post.create(title: "Blah") }
+      let(:make_request) { post :create, tag: {name: "Blah"}, post_id: p.id }
+      it 'creates it for a post' do
+        make_request
+        expect(assigns(:post).tags.count).to eq 1
+      end
+    end
   end
 
   describe 'DELETE destroy' do

@@ -14,7 +14,7 @@ class Post
   def add_tags
     if tag_names
       tags = tag_names.map do |tag|
-        Tag.find_one(name: tag) || Tag.create(name: tag)
+        Tag.find_or_create(name: tag)
       end
       self.tag_names = nil
       self.tags << tags
