@@ -8,6 +8,7 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(params.require(:post).permit!)
     @post.save
+    render json: @post.as_json
   end
 
   def destroy
