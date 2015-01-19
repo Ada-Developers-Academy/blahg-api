@@ -10,7 +10,10 @@ brew update
 brew install mongodb
 ln -sfv /usr/local/opt/mongodb/*.plist ~/Library/LaunchAgents
 launchctl load ~/Library/LaunchAgents/homebrew.mxcl.mongodb.plist
-# Check if installation was successful
+sudo mkdir -p /data/db 
+# Start a database server running in a different tab in your terminal
+mongod
+# Check if installation was successful in a separate tab
 # If an interactive mongo shell opens, then it is
 mongo
 exit
@@ -22,6 +25,7 @@ Next, clone the app and run it locally:
 git clone git@github.com:Ada-Developers-Academy/blahg-api.git
 cd blahg-api
 bundle
+rake db:seed
 rails server
 ```
 
