@@ -81,6 +81,7 @@ Accepted values:
 |post[title]|String|
 |post[content]|String|
 |post[date]|Time|
+|post[tag_ids]|Array of strings|
 
 -------
 
