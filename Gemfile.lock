@@ -52,6 +52,7 @@ GEM
     plucky (0.6.6)
       mongo (~> 1.5)
     rack (1.5.2)
+    rack-cors (0.3.1)
     rack-test (0.6.2)
       rack (>= 1.0)
     rails (4.1.8)
@@ -110,6 +111,7 @@ PLATFORMS
 DEPENDENCIES
   bson_ext
   mongo_mapper
+  rack-cors
   rails (= 4.1.8)
   rails-api
   rspec-rails
